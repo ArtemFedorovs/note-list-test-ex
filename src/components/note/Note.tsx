@@ -1,6 +1,5 @@
 import {RootState, AppDispatch} from '../../app/store'; //типы redux
 import {useSelector, useDispatch} from 'react-redux';
-
 import styles from './Note.module.css';
 
 type NotePropType = {
@@ -10,11 +9,12 @@ type NotePropType = {
 }
 
 export function Note({value, id}: NotePropType) {
-  const activeNote: number | null = useSelector((state: RootState)=>state.notes.activeNote)
+  const activeNote: number | null = useSelector((state: RootState)=>state.notes.activeNote) //проверяем, является ли эта заметка выделенной. Информация об этом хранится в redux
   let isChosen: boolean = activeNote === id
+
   const dispatch:  AppDispatch = useDispatch();
-  function choseThisNote(): void {
-    !isChosen && dispatch({type: "CHANGE FOCUS", payload: id});
+  function choseThisNote(): void {  // При клике на заметку, передаеи в redux id выбранной записи
+    !isChosen && dispatch({type: "CHANGE FOCUS", payload: id}); 
   }
   return (
     <div className={styles.flexContainer}>

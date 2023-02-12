@@ -17,7 +17,7 @@
   
   .modalDialog {
     width: 100%;
-    max-width: 350px;
+    max-width: 550px;
     background: white;
     position: relative;
     margin: 0 20px;
@@ -31,6 +31,7 @@
     -webkit-animation-duration: 0.4s;
     animation-name: slide-in;
     animation-duration: 0.5s;
+    border-radius: 4px;
   }
   
   .modalFooter {
@@ -47,9 +48,12 @@
   }
 
   .modalInput{
-    height: 40px;
+    height: 80px;
     width: calc(100% - 30px);
     margin: 10px;
+    border: 1px solid #dbdbdb;
+    font-size: large;
+    border-radius: 2px;
   }
 
   .modalClose {

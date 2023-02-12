@@ -19,19 +19,20 @@ const noteListReducer = (state: StateType  = { activeNote: null, noteList: []}, 
     };  
     case "DELETE NOTE":{
       let newlist: NoteListType = JSON.parse(JSON.stringify(state.noteList));
-      if (state.activeNote !== null && newlist !== null) {  //Проверка на наличии выделенной записи в списке
-        let index = newlist.findIndex(elem => elem.id === state.activeNote); //Находим индекс выделенного элемента в массиве
+      let newActiveNote: null | number = JSON.parse(JSON.stringify(state.activeNote));
+      if (newActiveNote !== null && newlist !== null) {  //Проверка на наличии выделенной записи в списке
+        let index = newlist.findIndex(elem => elem.id === newActiveNote); //Находим индекс выделенного элемента в массиве
         newlist.splice(index, 1,);  //Удаляем элемент
+        (index > 0) ? newActiveNote = newlist[index-1].id : newActiveNote = null;//делаем активной предыдущую запись
       };  
-      return {activeNote: null, noteList: newlist};
+      return {activeNote: newActiveNote, noteList: newlist};
     };
-    case "CHANGE FOCUS":{
+    case "CHANGE FOCUS":{  //При клике на запись в redux придет информация о том, какую из записе выбрали
       let newstate: StateType = JSON.parse(JSON.stringify(state));
       newstate.activeNote = action.payload  
       return newstate;
     };
    
-
     default: return state;
   } ;
 };
