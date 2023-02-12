@@ -16,10 +16,10 @@ export function Note({value, id}: NotePropType) {
   function choseThisNote(): void {
     !isChosen && dispatch({type: "CHANGE FOCUS", payload: id});
   }
-  function chose(){}
   return (
-    <div className={isChosen?styles.chosenNote:styles.note} onClick ={()=>choseThisNote()} >
-      {value}
+    <div className={styles.flexContainer}>
+      <div className={isChosen?styles.chosenNoteMarker:styles.noteMarker} onClick ={()=>choseThisNote()} ></div>
+      <div className={isChosen?styles.chosenNote:styles.note} onClick ={()=>choseThisNote()} >{value.split('\n').map( (it, i) => <div key={'x'+i}>{it}</div> )}</div>
     </div>
   );
 }

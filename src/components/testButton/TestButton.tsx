@@ -8,7 +8,7 @@ export function TestButton() {
   
   return (
     <div className={styles.button}>
-      <p>Тест GraphQL</p>
+      Тест GraphQL
     </div>
   );
 }

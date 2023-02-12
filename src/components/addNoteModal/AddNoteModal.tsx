@@ -22,18 +22,18 @@ export function AddNoteModal({visible, onClose}: ModalPropType) {
   return (
     <div className={styles.modal} onClick={onClose}>
         <div className={styles.modalDialog} onClick={e => e.stopPropagation()}>
-            <div className='modal-header'>
-                <h3 className={styles.modalTtitle}>Добавить заметку</h3>
+            <div className={styles.modalHeader}>
+                <h3 className={styles.modalTitle}>Добавить заметку</h3>
                 <span className={styles.modalClose} onClick={onClose}>&times;</span>
             </div>
             <div className={styles.modalBody}>
                 <div className={styles.modalContent}>
-                    <input type= "text" placeholder='Введите заметку' value={value} onChange={(event)=>changeValue(event.target.value)}/>
+                    <textarea className={styles.modalInput} placeholder='Введите заметку' value={value} onChange={(event)=>changeValue(event.target.value)}/>
                 </div>
             </div>
            <div className={styles.modalFooter}>
-               <button onClick={()=> addNote()}>Ок</button>
-               <button onClick={()=> onClose()}>Отмена</button>
+               <button className={styles.modalButton} onClick={()=> addNote()}>Ок</button>
+               <button className={styles.modalButton}  onClick={()=> onClose()}>Отмена</button>
             </div>
         </div>
       </div>

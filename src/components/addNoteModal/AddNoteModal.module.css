@@ -12,6 +12,7 @@
     background-color: rgba(0, 0, 0, 0.25);
     animation-name: appear;
     animation-duration: 300ms;
+    border-radius: 8px;
   }
   
   .modalDialog {
@@ -35,28 +36,38 @@
   .modalFooter {
     display: flex;
     align-items: center;
-    padding: 1rem;
     border-top: 1px solid #dbdbdb;
     justify-content: flex-end;
   }
   .modalHeader {
     border-bottom: 1px solid #dbdbdb;
     justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
+
+  .modalInput{
+    height: 40px;
+    width: calc(100% - 30px);
+    margin: 10px;
   }
 
   .modalClose {
     cursor: pointer;
-    padding: 1rem;
-    margin: -1rem -1rem -1rem auto;
+    margin: 12px;
+    font-size: 30px;
   }
   .modalBody {
     overflow: auto;
   }
-  .modalContent {
-    padding: 1rem;
-  }
+  .modalButton {
+    margin: 8px;
+    font-size: 15px;
+    padding: 6px;
+    min-width: 80px;
+   }
   
   .modalTitle {
-    margin: 0;
+    margin: 12px;
   }
   

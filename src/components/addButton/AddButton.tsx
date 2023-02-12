@@ -10,8 +10,8 @@ export function AddButton() {
   const openModal = () => setModal(true);
 
   return (
-    <div className={styles.button}>
-      <p onClick={() => openModal()}>Добавить</p>
+    <div onClick={() => openModal()} className={styles.button}>
+      Добавить
       <AddNoteModal 
         visible={isModal}
         onClose={onClose}

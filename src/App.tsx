@@ -7,11 +7,12 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-
         <NoteList />
-        <AddButton />
-        <DeleteButton />
-        <TestButton />
+        <div className="flex-container">
+          <AddButton />
+          <DeleteButton />
+          <TestButton />
+        </div>
     </div>
   );
 }

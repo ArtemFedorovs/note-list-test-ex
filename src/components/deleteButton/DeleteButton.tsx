@@ -16,9 +16,8 @@ export function DeleteButton() {
   }
 
   return (
-    <div className={styles.button}>
-      <p onClick={() => deleteNote()}>Удалить</p>
-
+    <div onClick={() => deleteNote()} className={styles.button}>
+      Удалить
     </div>
   );
 }

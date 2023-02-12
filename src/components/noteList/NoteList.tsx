@@ -8,9 +8,12 @@ export function NoteList() {
   const noteList = useSelector((state: RootState)=>state.notes.noteList)
 
   return (
-    <div className="list">
-      {!noteList ? null : noteList.map((unit: NoteType)=> <Note key ={unit.id} id = {unit.id} value = {unit.value} />
-      )}
+    <div>
+      <h1>Список записей</h1>
+      <div className = {styles.list}>
+        {!noteList ? null : noteList.map((unit: NoteType)=> <Note key ={unit.id} id = {unit.id} value = {unit.value} />
+        )}
+      </div>
     </div>
   );
 }
